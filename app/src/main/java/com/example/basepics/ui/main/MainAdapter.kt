@@ -20,7 +20,6 @@ class MainAdapter() :
     private var list = arrayListOf<Image>()
     val selectedList = ArrayList<String>()
 
-
     inner class ViewHolder(private var binding: ItemPicsRvBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
@@ -64,17 +63,6 @@ class MainAdapter() :
     @SuppressLint("NotifyDataSetChanged")
     fun addList(list: ArrayList<Image>) {
         this.list = list
-        notifyDataSetChanged()
-    }
-
-    fun removeList(list: ArrayList<Image>) {
-        this.list.removeAll(list.toSet())
-        this.list = list
-        notifyDataSetChanged()
-    }
-    fun update(list: ArrayList<Image>){
-        this.list.clear()
-        this.list.addAll(list)
         notifyDataSetChanged()
     }
 

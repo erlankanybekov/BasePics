@@ -35,8 +35,8 @@ class MainFragment :
 
     override fun initViews() {
         binding.recyclerPics.adapter = mainAdapter
-        mainAdapter.removeList(loadData())
-        if (mainAdapter.removeList(loadData()) != null){
+
+        if (list.isEmpty()){
             mainAdapter.addList(loadData())
         }
     }
@@ -73,8 +73,14 @@ class MainFragment :
                 true))
             add(Image("https://www.forfarmers.co.uk/bestanden/ForFarmers_2018/Nieuws/w724-37966-1/sheep_buckets.jpg",
                 true))
-            add(Image("https://www.paragonvet.com/glide-img/containers/main/julian-schiemann-g-o9lqv51qc-unsplash.jpg/7bf315f8d7c405c7676132e6784c4450.jpg",
+            add(Image("https://thumbs.dreamstime.com/b/sheep-19034277.jpg",
                 true))
+            add(Image("https://thumbs.dreamstime.com/b/sheep-19034277.jpg",
+                true))
+            add(Image("https://thumbs.dreamstime.com/b/sheep-19034277.jpg",
+                true))
+
+
 
         }
 
