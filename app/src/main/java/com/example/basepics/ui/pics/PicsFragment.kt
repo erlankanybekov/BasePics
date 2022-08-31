@@ -1,28 +1,20 @@
 package com.example.basepics.ui.pics
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
+
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
-import com.example.basepics.R
+
 import com.example.basepics.base.BaseFragment
 import com.example.basepics.base.BaseViewModel
 import com.example.basepics.databinding.PicsFragmentBinding
 import com.example.basepics.extension.KEY
-import com.example.basepics.ui.main.MainAdapter
-import com.example.basepics.ui.main.MainViewModel
 
 class PicsFragment : BaseFragment<PicsFragmentBinding, BaseViewModel>() {
 
-    private val adapter = PicsAdapter()
+    private val picsAdapter = PicsAdapter()
     override val viewModel: PicsViewModel by lazy {
         ViewModelProvider(requireActivity())[PicsViewModel::class.java]
     }
-
 
     override fun inflateVB(layoutInflater: LayoutInflater): PicsFragmentBinding {
         return PicsFragmentBinding.inflate(layoutInflater)
@@ -32,11 +24,9 @@ class PicsFragment : BaseFragment<PicsFragmentBinding, BaseViewModel>() {
     }
 
     override fun initViews() {
-        binding.recyclerResult.adapter = adapter
-        binding.recyclerResult.layoutManager = GridLayoutManager(requireContext(), 3)
+        binding.recyclerResult.adapter = picsAdapter
         val argument = arguments?.getStringArrayList(KEY)
-        argument?.let { adapter.setList(it) }
-
+        argument?.let { picsAdapter.setList(it) }
     }
 
     override fun initViewModel() {
@@ -44,6 +34,12 @@ class PicsFragment : BaseFragment<PicsFragmentBinding, BaseViewModel>() {
 
     override fun initListener() {
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        val argument = arguments?.getStringArrayList(KEY)
+        argument?.clear()
     }
 
 

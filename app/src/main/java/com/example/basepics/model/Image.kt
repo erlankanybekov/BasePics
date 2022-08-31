@@ -1,4 +1,4 @@
-package com.example.basepics.ui.model
+package com.example.basepics.model
 
 import java.io.Serializable
 

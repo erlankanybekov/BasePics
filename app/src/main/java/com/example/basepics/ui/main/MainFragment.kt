@@ -6,13 +6,12 @@ import android.view.LayoutInflater
 
 import androidx.lifecycle.ViewModelProvider
 
-import androidx.recyclerview.widget.GridLayoutManager
 import com.example.basepics.R
 import com.example.basepics.base.BaseFragment
 import com.example.basepics.base.BaseViewModel
 import com.example.basepics.databinding.FragmentMainBinding
 import com.example.basepics.extension.KEY
-import com.example.basepics.ui.model.Image
+import com.example.basepics.model.Image
 
 
 class MainFragment :
@@ -79,11 +78,7 @@ class MainFragment :
                 true))
             add(Image("https://thumbs.dreamstime.com/b/sheep-19034277.jpg",
                 true))
-
-
-
         }
-
         return list
     }
 

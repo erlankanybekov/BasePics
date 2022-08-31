@@ -1,5 +1,7 @@
 package com.example.basepics.ui.pics
 
+import android.annotation.SuppressLint
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -15,9 +17,9 @@ class PicsAdapter : RecyclerView.Adapter<PicsAdapter.ViewHolder>() {
         fun bind(image: String) {
             binding.imageviewPics.load(image)
         }
-
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setList(image: ArrayList<String>) {
         this.list = image
         notifyDataSetChanged()

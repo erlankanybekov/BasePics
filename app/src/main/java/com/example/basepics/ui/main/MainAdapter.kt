@@ -2,19 +2,18 @@ package com.example.basepics.ui.main
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import android.view.View
+
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.basepics.databinding.ItemPicsRvBinding
 import com.example.basepics.extension.load
-import com.example.basepics.ui.model.Image
-import java.util.*
+import com.example.basepics.model.Image
 
 import kotlin.collections.ArrayList
 
 
-class MainAdapter() :
+class MainAdapter:
     RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
     private var list = arrayListOf<Image>()
@@ -52,7 +51,6 @@ class MainAdapter() :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(list[position])
-
     }
 
     override fun getItemCount(): Int {
