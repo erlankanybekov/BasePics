@@ -76,8 +76,7 @@ class MainFragment :
                 true))
             add(Image("https://thumbs.dreamstime.com/b/sheep-19034277.jpg",
                 true))
-            add(Image("https://thumbs.dreamstime.com/b/sheep-19034277.jpg",
-                true))
+
         }
         return list
     }
